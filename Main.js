@@ -1,323 +1,109 @@
-<!DOCTYPE html>
+let money = document.getElementById("moneyPress")
+let moneyDisplay = document.getElementById("moneyDisplay")
+
+let upgrade1 = document.getElementById("upgrade1")
+let upgrade2 = document.getElementById("upgrade2")
+let upgrade3 = document.getElementById("upgrade3")
+let upgrade4 = document.getElementById("upgrade4")
+let upgrade5 = document.getElementById("upgrade5")
+
+money.addEventListener("click", buttonClicked)
+
+upgrade1.addEventListener("click", upgrade1Clicked)
+upgrade2.addEventListener("click", upgrade2Clicked)
+upgrade3.addEventListener("click", upgrade3Clicked)
+upgrade4.addEventListener("click", upgrade4Clicked)
+upgrade5.addEventListener("click", upgrade5Clicked)
 
 
-<html>
-  <head>
-    <title>
-      Button Clicker
-    </title>
+money = 0
+multiply = 1
+autoClick = 0
 
-    <style>
-
-      .mrrguyy-link {
-        color: rgb(0, 0, 255);
-        margin: 0;
-        position: absolute;
-        top: 90%;
-        font-size: 20px;
-        font-family: Arial;
-        transition: opacity 0.1s;
-      }
-
-      .mrrguyy-link:hover {
-        opacity: 0.6;
-      }
-
-      .creatorTXT {
-        color: rgb(0, 0, 0);
-        margin: 0;
-        position: absolute;
-        top: 89%;
-        left: 6%;
-        font-size: 35px;
-        font-family: Arial;
-      }
-
-      .more-link {
-        color: rgb(0, 0, 255);
-        margin: 0;
-        position: absolute;
-        top: 95%;
-        font-size: 20px;
-        font-family: Arial;
-        transition: opacity 0.1s;
-      }
-
-      .more-link:hover {
-        opacity: 0.6
-      }
-
-      .moreTXT {
-        color: rgb(0, 0, 0);
-        margin: 0;
-        position: absolute;
-        top: 94%;
-        left: 6%;
-        font-size: 35px;
-        font-family: Arial;
-      }
-
-
-      .button {
-        background-color: rgb(212, 37, 24);
-        color: white;
-        font-weight: bold;
-        font-size: 50px;
-        height: 200px;
-        width: 200px;
-        border-radius: 100px;
-        border-style: solid;
-        border-width: 10px;
-        margin: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        cursor: pointer;
-        transition: background-color 0.1s, opacity 0.1s, margin 0.01s;
-      }
-    
-      .button:hover {
-        background-color: rgb(174, 29, 18);
-      }
-    
-      .button:active {
-        margin-top: 2px;
-        opacity: 0.8;
-      }
-
-      .moneydisplay {
-        font-size: 50px;
-        font-family: Arial;
-        font-weight: bold;
-        margin: 0;
-        position: absolute;
-        left: 50%;
-        top: 30%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-      }
-
-      .clicksTXT {
-        font-size: 50px;
-        font-family: Arial;
-        font-weight: bold;
-        margin: 0;
-        position: absolute;
-        left: 50%;
-        top: 23%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-      }
+upgrade1cost = 15
+upgrade2cost = 100
+upgrade3cost = 1000
+upgrade4cost = 8000
+upgrade5cost = 20000
 
 
 
-      .upgrade1 {
-        background-color: rgba(90, 90, 90, 0.6);
-        color: rgb(255, 255, 255);
-        border-style: solid;
-        border-width: 4px;
-        border-radius: 8px;
-        font-family: Arial;
-        font-size: 20px;
-        height: 50px;
-        width: 200px;
-        cursor: pointer;
-        margin: 0;
-        position: absolute;
-        left: 93%;
-        top: 40%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        transition: background-color 0.1s, opacity 0.1s;
-      }
+const formatter = new Intl.NumberFormat("en", {
+  notation: "compact"
+});
 
-      .upgrade1:hover {
-        background-color: rgba(90, 90, 90, 0.8);
-      }
-
-      .upgrade1:active {
-        opacity: 0.5;
-      }
+const moneyFormatter = new Intl.NumberFormat("en")
 
 
-      .upgrade2 {
-        background-color: rgba(90, 90, 90, 0.6);
-        color: rgb(255, 255, 255);
-        border-style: solid;
-        border-width: 4px;
-        border-radius: 8px;
-        font-family: Arial;
-        font-size: 20px;
-        height: 50px;
-        width: 200px;
-        cursor: pointer;
-        margin: 0;
-        position: absolute;
-        left: 93%;
-        top: 47%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        transition: background-color 0.1s, opacity 0.1s;
-      }
+function buttonClicked() {
+  money = money + multiply
+  moneyDisplayAmt()
+}
 
-      .upgrade2:hover {
-        background-color: rgba(90, 90, 90, 0.8);
-      }
-
-      .upgrade2:active {
-        opacity: 0.5;
-      }
-
-
-      .upgrade3 {
-        background-color: rgba(90, 90, 90, 0.6);
-        color: rgb(255, 255, 255);
-        border-style: solid;
-        border-width: 4px;
-        border-radius: 8px;
-        font-family: Arial;
-        font-size: 20px;
-        height: 50px;
-        width: 200px;
-        cursor: pointer;
-        margin: 0;
-        position: absolute;
-        left: 93%;
-        top: 54%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        transition: background-color 0.1s, opacity 0.1s;
-      }
-
-      .upgrade3:hover {
-        background-color: rgba(90, 90, 90, 0.8);
-      }
-
-      .upgrade3:active {
-        opacity: 0.5;
-      }
-
-      .upgrade4 {
-        background-color: rgba(90, 90, 90, 0.6);
-        color: rgb(255, 255, 255);
-        border-style: solid;
-        border-width: 4px;
-        border-radius: 8px;
-        font-family: Arial;
-        font-size: 20px;
-        height: 50px;
-        width: 200px;
-        cursor: pointer;
-        margin: 0;
-        position: absolute;
-        left: 93%;
-        top: 61%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        transition: background-color 0.1s, opacity 0.1s;
-      }
-
-      .upgrade4:hover {
-        background-color: rgba(90, 90, 90, 0.8);
-      }
-
-      .upgrade4:active {
-        opacity: 0.5;
-      }
-
-
-      .upgrade5 {
-        background-color: rgba(90, 90, 90, 0.6);
-        color: rgb(255, 255, 255);
-        border-style: solid;
-        border-width: 4px;
-        border-radius: 8px;
-        font-family: Arial;
-        font-size: 20px;
-        height: 50px;
-        width: 200px;
-        cursor: pointer;
-        margin: 0;
-        position: absolute;
-        left: 93%;
-        top: 68%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        transition: background-color 0.1s, opacity 0.1s;
-      }
-
-      .upgrade5:hover {
-        background-color: rgba(90, 90, 90, 0.8);
-      }
-
-      .upgrade5:active {
-        opacity: 0.5;
-      }
-    
-    </style>
-  </head>
-  <body>
-
-    <button type="button" id="moneyPress" class="button">
-      Press
-    </button>
-
-    <div id="moneyDisplay" class="moneydisplay">
-      0
-    </div>
-
-    <p class="clicksTXT">
-      Clicks
-    </p>
+function moneyDisplayAmt() {
+  moneyDisplay.innerHTML = (moneyFormatter.format(money))
+}
 
 
 
-    <button type="button" id="upgrade1" class="upgrade1">
-      15$ Hand
-    </button>
+function upgrade1Clicked() {
+  if (money >= upgrade1cost) {
+    money = money - upgrade1cost
+    autoClick = autoClick + 1
+    upgrade1cost = upgrade1cost * 1.4
+    upgrade1cost = parseInt(upgrade1cost)
+    upgrade1.innerHTML = (formatter.format(upgrade1cost) + "$ Hand")
+    moneyDisplayAmt()
+  }
+}
 
-    <button type="button" id="upgrade2" class="upgrade2">
-      100$ Mouse
-    </button>
+function upgrade2Clicked() {
+  if (money >= upgrade2cost) {
+    money = money - upgrade2cost
+    autoClick = autoClick + 3
+    upgrade2cost = upgrade2cost * 1.4
+    upgrade2cost = parseInt(upgrade2cost)
+    upgrade2.innerHTML = (formatter.format(upgrade2cost) + "$ Mouse")
+    moneyDisplayAmt()
+  }
+}
 
-    <button type="button" id="upgrade3" class="upgrade3">
-      1K$ Bat
-    </button>
+function upgrade3Clicked() {
+  if (money >= upgrade3cost) {
+    money = money - upgrade3cost
+    autoClick = autoClick + 5
+    upgrade3cost = upgrade3cost * 1.4
+    upgrade3cost = parseInt(upgrade3cost)
+    upgrade3.innerHTML = (formatter.format(upgrade3cost) + "$ Bat")
+    moneyDisplayAmt()
+  }
+}
 
-    <button type="button" id="upgrade4" class="upgrade4">
-      8K$ Grow Hand
-    </button>
+function upgrade4Clicked() {
+  if (money >= upgrade4cost) {
+    money = money - upgrade4cost
+    multiply = multiply + 1
+    upgrade4cost = upgrade4cost * 1.4
+    upgrade4cost = parseInt(upgrade4cost)
+    upgrade4.innerHTML = (formatter.format(upgrade4cost) + "$ Grow Hand")
+    moneyDisplayAmt()
+  }
+}
 
-    <button type="button" id="upgrade5" class="upgrade5">
-      20K$ Iron Hand
-    </button>
-
-
-
-
-    <a href="https://github.com/MrrGuyy" target="_blank" class="mrrguyy-link">
-      Mr Guy
-    </a>
-
-    <p class="creatorTXT">
-      &larr; Creator
-    </p>
-
-
-    <a href="https://github.com/MrrGuyy/Button-Clicker" target="_blank" class="more-link">
-      More
-    </a>
-
-    <p class="moreTXT">
-      &larr; More about the game
-    </p>
+function upgrade5Clicked() {
+  if (money >= upgrade5cost) {
+    money = money - upgrade5cost
+    autoClick = autoClick + 50
+    upgrade5cost = upgrade5cost * 1.4
+    upgrade5cost = parseInt(upgrade5cost)
+    upgrade5.innerHTML = (formatter.format(upgrade5cost) + "$ Iron Hand")
+    moneyDisplayAmt()
+  }
+}
 
 
-    
-    
-    <script src="Main.js"></script>
-
-  </body>
-</html>
+setInterval(function(){
+  money = money + autoClick
+  moneyDisplayAmt()
+},1000);
+  
