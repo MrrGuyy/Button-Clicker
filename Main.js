@@ -28,7 +28,11 @@ upgrade5cost = 20000
 
 
 
-const formatter = new Intl.NumberFormat("en");
+const formatter = new Intl.NumberFormat("en", {
+  notation: "compact"
+});
+
+const moneyFormatter = new Intl.NumberFormat("en")
 
 
 function buttonClicked() {
@@ -37,7 +41,7 @@ function buttonClicked() {
 }
 
 function moneyDisplayAmt() {
-  moneyDisplay.innerHTML = (formatter.format(money))
+  moneyDisplay.innerHTML = (moneyFormatter.format(money))
 }
 
 
