@@ -1,5 +1,6 @@
 let money = document.getElementById("moneyPress")
 let moneyDisplay = document.getElementById("moneyDisplay")
+let cps = document.getElementById("cps")
 
 let upgrade1 = document.getElementById("upgrade1")
 let upgrade2 = document.getElementById("upgrade2")
@@ -44,6 +45,9 @@ function moneyDisplayAmt() {
   moneyDisplay.innerHTML = (moneyFormatter.format(money))
 }
 
+function cpsDisplayAmt() {
+  cps.innerHTML = (moneyFormatter.format(autoClick))
+}
 
 
 function upgrade1Clicked() {
@@ -104,6 +108,7 @@ function upgrade5Clicked() {
 
 setInterval(function(){
   money = money + autoClick
+  cpsDisplayAmt()
   moneyDisplayAmt()
 },1000);
   
