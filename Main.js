@@ -92,7 +92,7 @@ function upgrade5Clicked() {
     autoClick = autoClick + 50
     upgrade5cost = upgrade5cost * 1.4
     upgrade5cost = parseInt(upgrade5cost)
-    upgrade5.innerHTML = (formatter.format(upgrade5cost) + "$ Bat")
+    upgrade5.innerHTML = (formatter.format(upgrade5cost) + "$ Iron Hand")
     moneyDisplayAmt()
   }
 }
