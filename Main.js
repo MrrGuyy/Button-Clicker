@@ -17,7 +17,7 @@ upgrade4.addEventListener("click", upgrade4Clicked)
 upgrade5.addEventListener("click", upgrade5Clicked)
 
 
-money = 0
+money = 999999999999999999999999999999999999999999999999999
 multiply = 1
 autoClick = 0
 
@@ -58,62 +58,94 @@ function moneyDisplayAmt() {
 
 
 function upgrade1Clicked() {
+
   if (money >= upgrade1cost) {
-    money = money - upgrade1cost
-    autoClick = autoClick + 1
-    upgrade1AM = upgrade1AM + 1
-    upgrade1cost = upgrade1cost * 1.4
-    upgrade1cost = parseInt(upgrade1cost)
-    upgrade1.innerHTML = (formatter.format(upgrade1cost) + "$ Hand " + formatter.format(upgrade1AM))
-    moneyDisplayAmt()
+    if (upgrade1AM >= 100) {
+      upgrade1.innerHTML = ("MAX Hand 100");
+    }
+
+    else {
+      money = money - upgrade1cost
+      autoClick = autoClick + 1
+      upgrade1AM = upgrade1AM + 1
+      upgrade1cost = upgrade1cost * 1.4
+      upgrade1cost = parseInt(upgrade1cost)
+      upgrade1.innerHTML = (formatter.format(upgrade1cost) + "$ Hand " + formatter.format(upgrade1AM))
+      moneyDisplayAmt()
+    }
+
   }
 }
 
 function upgrade2Clicked() {
   if (money >= upgrade2cost) {
-    money = money - upgrade2cost
-    upgrade2AM = upgrade2AM + 1
-    autoClick = autoClick + 3
-    upgrade2cost = upgrade2cost * 1.4
-    upgrade2cost = parseInt(upgrade2cost)
-    upgrade2.innerHTML = (formatter.format(upgrade2cost) + "$ Mouse " + formatter.format(upgrade2AM))
-    moneyDisplayAmt()
+    if (upgrade2AM >= 100) {
+      upgrade2.innerHTML = ("MAX Mouse 100");
+    }
+
+    else {
+      money = money - upgrade2cost
+      autoClick = autoClick + 1
+      upgrade2AM = upgrade2AM + 1
+      upgrade2cost = upgrade2cost * 1.4
+      upgrade2cost = parseInt(upgrade2cost)
+      upgrade2.innerHTML = (formatter.format(upgrade2cost) + "$ Mouse " + formatter.format(upgrade2AM))
+      moneyDisplayAmt()
+    }
   }
 }
 
 function upgrade3Clicked() {
   if (money >= upgrade3cost) {
-    money = money - upgrade3cost
-    upgrade3AM = upgrade3AM + 1
-    autoClick = autoClick + 5
-    upgrade3cost = upgrade3cost * 1.4
-    upgrade3cost = parseInt(upgrade3cost)
-    upgrade3.innerHTML = (formatter.format(upgrade3cost) + "$ Bat " + formatter.format(upgrade3AM))
-    moneyDisplayAmt()
+    if (upgrade3AM >= 100) {
+      upgrade3.innerHTML = ("MAX Bat 100");
+    }
+
+    else {
+      money = money - upgrade3cost
+      autoClick = autoClick + 1
+      upgrade3AM = upgrade3AM + 1
+      upgrade3cost = upgrade3cost * 1.4
+      upgrade3cost = parseInt(upgrade3cost)
+      upgrade3.innerHTML = (formatter.format(upgrade3cost) + "$ Bat " + formatter.format(upgrade3AM))
+      moneyDisplayAmt()
+    }
   }
 }
 
 function upgrade4Clicked() {
   if (money >= upgrade4cost) {
-    money = money - upgrade4cost
-    multiply = multiply + 1
-    upgrade4AM = upgrade4AM + 1
-    upgrade4cost = upgrade4cost * 1.4
-    upgrade4cost = parseInt(upgrade4cost)
-    upgrade4.innerHTML = (formatter.format(upgrade4cost) + "$ Grow Hand " + formatter.format(upgrade4AM))
-    moneyDisplayAmt()
+    if (upgrade4AM >= 100) {
+      upgrade4.innerHTML = ("MAX Grow Hand 100");
+    }
+
+    else {
+      money = money - upgrade4cost
+      autoClick = autoClick + 1
+      upgrade4AM = upgrade4AM + 1
+      upgrade4cost = upgrade4cost * 1.4
+      upgrade4cost = parseInt(upgrade4cost)
+      upgrade4.innerHTML = (formatter.format(upgrade4cost) + "$ Grow Hand " + formatter.format(upgrade4AM))
+      moneyDisplayAmt()
+    }
   }
 }
 
 function upgrade5Clicked() {
   if (money >= upgrade5cost) {
-    money = money - upgrade5cost
-    autoClick = autoClick + 50
-    upgrade5AM = upgrade5AM + 1
-    upgrade5cost = upgrade5cost * 1.4
-    upgrade5cost = parseInt(upgrade5cost)
-    upgrade5.innerHTML = (formatter.format(upgrade5cost) + "$ Iron Hand " + formatter.format(upgrade5AM))
-    moneyDisplayAmt()
+    if (upgrade5AM >= 100) {
+      upgrade5.innerHTML = ("MAX Iron Hand 100");
+    }
+
+    else {
+      money = money - upgrade5cost
+      autoClick = autoClick + 1
+      upgrade5AM = upgrade5AM + 1
+      upgrade5cost = upgrade5cost * 1.4
+      upgrade5cost = parseInt(upgrade5cost)
+      upgrade5.innerHTML = (formatter.format(upgrade5cost) + "$ Iron Hand " + formatter.format(upgrade5AM))
+      moneyDisplayAmt()
+    }
   }
 }
 
