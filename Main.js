@@ -17,7 +17,7 @@ upgrade4.addEventListener("click", upgrade4Clicked)
 upgrade5.addEventListener("click", upgrade5Clicked)
 
 
-money = 999999999999999999999999999999999999999999999999999
+money = 0
 multiply = 1
 autoClick = 0
 
