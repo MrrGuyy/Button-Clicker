@@ -85,7 +85,7 @@ function upgrade2Clicked() {
 
     else {
       money = money - upgrade2cost
-      autoClick = autoClick + 1
+      autoClick = autoClick + 3
       upgrade2AM = upgrade2AM + 1
       upgrade2cost = upgrade2cost * 1.4
       upgrade2cost = parseInt(upgrade2cost)
@@ -103,7 +103,7 @@ function upgrade3Clicked() {
 
     else {
       money = money - upgrade3cost
-      autoClick = autoClick + 1
+      autoClick = autoClick + 5
       upgrade3AM = upgrade3AM + 1
       upgrade3cost = upgrade3cost * 1.4
       upgrade3cost = parseInt(upgrade3cost)
@@ -121,7 +121,7 @@ function upgrade4Clicked() {
 
     else {
       money = money - upgrade4cost
-      autoClick = autoClick + 1
+      multiply = multiply + 1
       upgrade4AM = upgrade4AM + 1
       upgrade4cost = upgrade4cost * 1.4
       upgrade4cost = parseInt(upgrade4cost)
@@ -139,7 +139,7 @@ function upgrade5Clicked() {
 
     else {
       money = money - upgrade5cost
-      autoClick = autoClick + 1
+      autoClick = autoClick + 50
       upgrade5AM = upgrade5AM + 1
       upgrade5cost = upgrade5cost * 1.4
       upgrade5cost = parseInt(upgrade5cost)
